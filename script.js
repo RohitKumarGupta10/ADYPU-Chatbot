@@ -64,7 +64,7 @@ function sendMessage() {
       "Our university has a dedicated placement cell that assists students with job placements. Many reputed companies visit our campus for recruitment like TCS, Wipro, Tech Mahindra, Infosys, Microsoft and many more. Visit our placement page for more details.";
   } else if (userInput.includes("scholarship")) {
     botResponse =
-      "Yes, we offer various scholarships based on merit and financial need. For more information on how to apply and the criteria, visit our scholarships page.";
+      "Yes we offer various scholarships based on merit and financial need. For more information on how to apply and the criteria, visit our scholarships page.";
   } else if (userInput.includes("academic calendar")) {
     botResponse =
       "The academic calendar includes important dates such as semester start/end, holidays, and exam periods. You can find the detailed calendar on our university's official website.";
