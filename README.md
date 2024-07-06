@@ -18,7 +18,10 @@ Check out the live demo [here](https://adypu-chatbot.netlify.app/).
 
 - HTML5, CSS3, JavaScript
 - Netlify (for hosting)
+## Future Enhancement
 - Dialogflow (for natural language processing)
+- Integrating with OPEN AI
+- Hosting The Chatbot💬 in Google Cloud, AWS and Azure
 
 ## Setup Instructions
 
