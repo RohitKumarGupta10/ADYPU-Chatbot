@@ -1,7 +1,5 @@
 # ADYPU Chatbot
 
-![Netlify Status](https://api.netlify.com/api/v1/badges/your-netlify-site-id/status.svg)
-
 ## Overview
 
 ADYPU Chatbot is a web-based assistant designed to provide quick access to information about Ajeenkya DY Patil University.
@@ -35,6 +33,3 @@ Enter your message in the input box and click 'Send' to interact with the chatbo
 
 Contributions are welcome! Fork the repository and submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
