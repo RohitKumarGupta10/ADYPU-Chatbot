@@ -62,7 +62,7 @@ function sendMessage() {
   } else if (userInput.includes("placements") || userInput.includes("jobs")) {
     botResponse =
       "Our university has a dedicated placement cell that assists students with job placements. Many reputed companies visit our campus for recruitment like TCS, Wipro, Tech Mahindra, Infosys, Microsoft and many more. Visit our placement page for more details.";
-  } else if (userInput.includes("scholarships")) {
+  } else if (userInput.includes("scholarship")) {
     botResponse =
       "Yes, we offer various scholarships based on merit and financial need. For more information on how to apply and the criteria, visit our scholarships page.";
   } else if (userInput.includes("academic calendar")) {
@@ -71,7 +71,7 @@ function sendMessage() {
   } else if (userInput.includes("apply for graduation")) {
     botResponse =
       "You can apply for graduation through our student portal during the designated application period. Make sure to check the requirements and deadlines.";
-  } else if (userInput.includes("IT support") || userInput.includes("Wi-Fi")) {
+  } else if (userInput.includes("labs") || userInput.includes("wifi")) {
     botResponse =
       "For IT support or Wi-Fi access, please visit the IT department on campus or contact our helpdesk at +91-XXX-XXXXXXX.";
   } else if (
@@ -87,7 +87,7 @@ function sendMessage() {
     botResponse =
       "Our alumni services offer career guidance and networking opportunities. Visit the alumni section on our website to explore services available post-graduation.";
   } else if (
-    userInput.includes("housing options") ||
+    userInput.includes("hostel") ||
     userInput.includes("dormitories")
   ) {
     botResponse =
