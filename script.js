@@ -133,13 +133,3 @@ window.onload = function () {
     appendMessage(initialBotResponse, "bot"); // Display initial welcome message
   }, 500);
 };
-
-
-//toggle button 
-const content= document.querySelector("body");
-const darkmode = document.querySelector("#darkmode");
-
-darkmode.addEventListener("click", ()=> {
-  darkmode.classList.toggle("active");
-    content.classList.toggle("dark");
-})
