@@ -49,7 +49,7 @@ function sendMessage() {
   ) {
     botResponse =
       "Our faculty members are highly qualified with expertise in their respective fields. We have experienced professors and industry experts. Visit our website for more details.";
-  } else if (userInput.includes("fees") || userInput.includes("cost")) {
+  } else if (userInput.includes("fees")){
     botResponse =
       "For information regarding fees, please visit our official website or contact our admissions office.";
   } else if (
@@ -62,7 +62,7 @@ function sendMessage() {
   } else if (userInput.includes("placements") || userInput.includes("jobs")) {
     botResponse =
       "Our university has a dedicated placement cell that assists students with job placements. Many reputed companies visit our campus for recruitment like TCS, Wipro, Tech Mahindra, Infosys, Microsoft and many more. Visit our placement page for more details.";
-  } else if (userInput.includes("scholarship")) {
+  } else if (userInput.includes("scholarship") || userInput.includes("scholarships")){
     botResponse =
       "Yes we offer various scholarships based on merit and financial need. For more information on how to apply and the criteria, visit our scholarships page.";
   } else if (userInput.includes("academic calendar")) {
@@ -81,9 +81,7 @@ function sendMessage() {
     botResponse =
       "Health services including counseling are available at our health center located on campus. Visit the health services page on our website for more information.";
   } else if (
-    userInput.includes("alumni") ||
-    userInput.includes("career services")
-  ) {
+    userInput.includes("alumni")){
     botResponse =
       "Our alumni services offer career guidance and networking opportunities. Visit the alumni section on our website to explore services available post-graduation.";
   } else if (
@@ -99,7 +97,7 @@ function sendMessage() {
     botResponse =
       "Research opportunities are available for undergraduate students, including involvement in faculty-led research projects. Explore the research section on our website for more details.";
   } else if (
-    userInput.includes("career preparation") ||
+    userInput.includes("placement preparation") ||
     userInput.includes("job interviews")
   ) {
     botResponse =
