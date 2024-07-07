@@ -49,9 +49,9 @@ function sendMessage() {
   ) {
     botResponse =
       "Our faculty members are highly qualified with expertise in their respective fields. We have experienced professors and industry experts. Visit our website for more details.";
-  } else if (userInput.includes("fees")){
+  } else if (userInput.includes("fees")) {
     botResponse =
-      "For information regarding fees, please visit our official website or contact our admissions office.";
+      "Ajeenkya DY Patil University (ADYPU), Pune Fee Structure 2024 - B.Tech	Rs 3,00,000, BBA	Rs 2,30,000, B.Des	Rs 3,50,000, BA	Rs 2,30,000, BSc	Rs 1,75,000	 BCA	Rs 2,00,000 , M.Tech	Rs 2,30,000 ,MBA	Rs 3,50,000	, MCA	Rs 2,10,000.";
   } else if (
     userInput.includes("hello") ||
     userInput.includes("hi") ||
@@ -62,16 +62,16 @@ function sendMessage() {
   } else if (userInput.includes("placements") || userInput.includes("jobs")) {
     botResponse =
       "Our university has a dedicated placement cell that assists students with job placements. Many reputed companies visit our campus for recruitment like TCS, Wipro, Tech Mahindra, Infosys, Microsoft and many more. Visit our placement page for more details.";
-  } else if (userInput.includes("scholarship") || userInput.includes("scholarships")){
+  } else if (
+    userInput.includes("scholarship") ||
+    userInput.includes("scholarships")
+  ) {
     botResponse =
-      "Yes we offer various scholarships based on merit and financial need. For more information on how to apply and the criteria, visit our scholarships page.";
+      "Yes, we offer various scholarships based on merit and financial need. For more information on how to apply and the criteria, visit our scholarships page.";
   } else if (userInput.includes("academic calendar")) {
     botResponse =
       "The academic calendar includes important dates such as semester start/end, holidays, and exam periods. You can find the detailed calendar on our university's official website.";
-  } else if (userInput.includes("apply for graduation")) {
-    botResponse =
-      "You can apply for graduation through our student portal during the designated application period. Make sure to check the requirements and deadlines.";
-  } else if (userInput.includes("labs") || userInput.includes("wifi")) {
+  } else if (userInput.includes("it") || userInput.includes("wifi")) {
     botResponse =
       "For IT support or Wi-Fi access, please visit the IT department on campus or contact our helpdesk at +91-XXX-XXXXXXX.";
   } else if (
@@ -80,14 +80,10 @@ function sendMessage() {
   ) {
     botResponse =
       "Health services including counseling are available at our health center located on campus. Visit the health services page on our website for more information.";
-  } else if (
-    userInput.includes("alumni")){
+  } else if (userInput.includes("alumni")) {
     botResponse =
       "Our alumni services offer career guidance and networking opportunities. Visit the alumni section on our website to explore services available post-graduation.";
-  } else if (
-    userInput.includes("hostel") ||
-    userInput.includes("dormitories")
-  ) {
+  } else if (userInput.includes("hostel") || userInput.includes("pg")) {
     botResponse =
       "We offer both on-campus and off-campus housing options. Explore the housing section on our website for details on dormitories and off-campus accommodations.";
   } else if (
