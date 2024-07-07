@@ -63,8 +63,7 @@ function sendMessage() {
     botResponse =
       "Our university has a dedicated placement cell that assists students with job placements. Many reputed companies visit our campus for recruitment like TCS, Wipro, Tech Mahindra, Infosys, Microsoft and many more. Visit our placement page for more details.";
   } else if (
-    userInput.includes("scholarship") ||
-    userInput.includes("scholarships")
+    userInput.includes("university scholarship")
   ) {
     botResponse =
       "Yes, we offer various scholarships based on merit and financial need. For more information on how to apply and the criteria, visit our scholarships page.";
@@ -87,8 +86,7 @@ function sendMessage() {
     botResponse =
       "We offer both on-campus and off-campus housing options. Explore the housing section on our website for details on dormitories and off-campus accommodations.";
   } else if (
-    userInput.includes("research opportunities") ||
-    userInput.includes("faculty research")
+    userInput.includes("research")
   ) {
     botResponse =
       "Research opportunities are available for undergraduate students, including involvement in faculty-led research projects. Explore the research section on our website for more details.";
