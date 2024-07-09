@@ -128,7 +128,7 @@ function appendMessage(message, sender) {
 // Initial welcome message from the bot when the page loads
 window.onload = function () {
   const initialBotResponse =
-    "Welcome to Ajeenkya DY Patil University help desk.\n\nAjeenkya DY Patil University, India's hub for innovation, offers an ideal environment for entrepreneurs and students with entrepreneurial spirits to enhance their ideas, pioneer groundbreaking technologies, and foster the growth of their startups.";
+    "Welcome to Ajeenkya DY Patil University help desk.";
   setTimeout(() => {
     appendMessage(initialBotResponse, "bot"); // Display initial welcome message
   }, 500);
