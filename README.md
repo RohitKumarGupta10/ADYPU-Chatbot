@@ -11,7 +11,7 @@ Check out the live demo [here](https://adypu-chatbot.netlify.app/).
 ### Screenshots
 
 #### Chatbot Interface
-![Chatbot Interface](chatbot-interface.png)
+![Chatbot Interface](IMG_20240713_104410.jpg) 
 
 #### Chatbot Response
 ![Chatbot Response](IMG_20240713_104348.jpg) 
