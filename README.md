@@ -8,6 +8,14 @@ ADYPU Chatbot is a web-based assistant designed to provide quick access to infor
 
 Check out the live demo [here](https://adypu-chatbot.netlify.app/).
 
+### Screenshots
+
+#### Chatbot Interface
+![Chatbot Interface](chatbot-interface.png)
+
+#### Chatbot Response
+![Chatbot Response](chatbot-response.png)
+
 ## Features
 
 - Real-time chat interface
@@ -18,10 +26,12 @@ Check out the live demo [here](https://adypu-chatbot.netlify.app/).
 
 - HTML5, CSS3, JavaScript
 - Netlify (for hosting)
-## Future Enhancement
+
+## Future Enhancements
+
 - Dialogflow (for natural language processing)
 - Integrating with OPEN AI
-- Hosting The Chatbot💬 in Google Cloud, AWS and Azure
+- Hosting The Chatbot💬 in Google Cloud, AWS, and Azure
 
 ## Setup Instructions
 
@@ -35,4 +45,3 @@ Enter your message in the input box and click 'Send' to interact with the chatbo
 ## Contributing
 
 Contributions are welcome! Fork the repository and submit a pull request.
-
