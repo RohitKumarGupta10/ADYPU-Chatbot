@@ -75,7 +75,7 @@ function sendMessage() {
       botResponse = `Hello ${userName}! How can I assist you today?`;
     } else if (
       userInput.toLowerCase().includes("placements") ||
-      userInput.toLowerCase().includes("jobs")
+      userInput.toLowerCase().includes("placement")
     ) {
       botResponse =
         "Our university has a dedicated placement cell that assists students with job placements. Many reputed companies visit our campus for recruitment like TCS, Wipro, Tech Mahindra, Infosys, Microsoft, and many more. Visit our placement page for more details.";
@@ -85,9 +85,9 @@ function sendMessage() {
     ) {
       botResponse =
         "At Ajeenkya DY Patil University, our placement records are impressive. The highest package offered to our students was 21 lakhs per annum. The average package typically ranges between 6 to 7 lakhs per annum. The lowest package recorded was 4 lakhs per annum. We are proud of our students' achievements and the opportunities they secure.";
-    } else if (userInput.toLowerCase().includes("academic calendar")) {
+    } else if (userInput.toLowerCase().includes("Thank you")) {
       botResponse =
-        "The academic calendar includes important dates such as semester start/end, holidays, and exam periods. You can find the detailed calendar on our university's official website.";
+        "Thank you for chatting with us. If you have any more questions about Ajeenkya DY Patil University, feel free to reach out again. Have a great day!.";
     } else if (
       userInput.toLowerCase().includes("it") ||
       userInput.toLowerCase().includes("wifi")
