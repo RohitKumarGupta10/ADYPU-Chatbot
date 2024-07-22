@@ -32,17 +32,18 @@ function sendMessage() {
   const userInputLower = userInput.toLowerCase();
 
   // Find a response based on the user's input or use the default response if no match
-  const response = Object.keys(responses).find(key => userInputLower.includes(key)) || 
-    "Unfortunately, I couldn’t find an answer to that. Please contact us at adypu.edu.in or call 020-35037942 for further assistance.";
+  let responseFound = false;
+  for (const key in responses) {
+    if (userInputLower.includes(key)) {
+      appendMessage(responses[key], "bot");
+      responseFound = true;
+      break;
+    }
+  }
 
-  // Log the response for debugging
-  console.log("User input:", userInputLower);
-  console.log("Bot response:", response);
-
-  // Simulate a delay before showing the bot's response
-  setTimeout(() => {
-    appendMessage(response, "bot");
-  }, 500);
+  if (!responseFound) {
+    appendMessage("Unfortunately, I couldn’t find an answer to that. Please contact us at adypu.edu.in or call 020-35037942 for further assistance.", "bot");
+  }
 
   // Clear the input field
   document.getElementById("user-input").value = "";
