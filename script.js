@@ -48,7 +48,7 @@ function sendMessage() {
   const userInputLower = userInput.toLowerCase();
 
   // Find a response based on the user's input or use the default response if no match
-  const response = Object.keys(responses).find(key => userInputLower.includes(key)) || 
+  const response = Object.keys(responses).find(key => userInputLower.includes(key)) ? responses[Object.keys(responses).find(key => userInputLower.includes(key))] : 
     "Unfortunately, I couldn’t find an answer to that. Please contact us at adypu.edu.in or call 020-35037942 for further assistance.";
 
   // Simulate a delay before showing the bot's response
