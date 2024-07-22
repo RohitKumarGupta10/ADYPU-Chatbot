@@ -33,7 +33,7 @@ function sendMessage() {
 
   // Find a response based on the user's input or use the default response if no match
   const response = Object.keys(responses).find(key => userInputLower.includes(key)) || 
-    "Sorry, I don't understand that. Please contact us at acet@adypu.edu.in or call 020-35037942.";
+    "Unfortunately, I couldn’t find an answer to that. Please contact us at acet@adypu.edu.in or call 020-35037942 for further assistance. You can also visit our website at www.adypu.edu.in for more information.";
 
   // Simulate a delay before showing the bot's response
   setTimeout(() => {
