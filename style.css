@@ -1,3 +1,4 @@
+/* General body styling */
 body {
   font-family: "Roboto", sans-serif;
   display: flex;
@@ -8,6 +9,7 @@ body {
   background-color: #ffffff;
 }
 
+/* Chat container styling */
 .chat-container {
   background-color: #ffffff;
   border-radius: 30px;
@@ -20,6 +22,7 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Header styling */
 .header {
   background-color: #007bff;
   color: #ffffff;
@@ -37,6 +40,7 @@ body {
   border-radius: 50%;
 }
 
+/* Chat box styling */
 .chat-box {
   height: 400px;
   overflow-y: scroll;
@@ -54,12 +58,14 @@ body {
   border-radius: 10px;
 }
 
+/* Input container styling */
 .input-container {
   display: flex;
   padding: 20px;
   background-color: #f9f9f9;
 }
 
+/* User input field styling */
 #user-input {
   flex: 1;
   padding: 15px;
@@ -76,6 +82,7 @@ body {
   outline: none;
 }
 
+/* Button styling */
 button {
   padding: 15px 20px;
   background-color: #007bff;
@@ -92,6 +99,7 @@ button:hover {
   transform: scale(1.05);
 }
 
+/* Message styling */
 .message {
   margin: 10px 0;
   padding: 10px 20px;
@@ -111,9 +119,9 @@ button:hover {
   background-color: #f1f1f1;
   color: #333;
   align-self: flex-start;
-  border-radius: 20px;
 }
 
+/* Animation for messages */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -125,6 +133,7 @@ button:hover {
   }
 }
 
+/* Responsive adjustments */
 @media (max-width: 600px) {
   .chat-box {
     height: 300px;
