@@ -35,6 +35,10 @@ function sendMessage() {
   const response = Object.keys(responses).find(key => userInputLower.includes(key)) || 
     "Unfortunately, I couldn’t find an answer to that. Please contact us at adypu.edu.in or call 020-35037942 for further assistance.";
 
+  // Log the response for debugging
+  console.log("User input:", userInputLower);
+  console.log("Bot response:", response);
+
   // Simulate a delay before showing the bot's response
   setTimeout(() => {
     appendMessage(response, "bot");
