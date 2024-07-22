@@ -29,11 +29,12 @@ function sendMessage() {
   };
 
   // Find a response based on the user's input or default response if no match
-  const response = Object.keys(responses).find(key => userInput.toLowerCase().includes(key)) || "Sorry, I don't understand that.";
+  const response = Object.keys(responses).find(key => userInput.toLowerCase().includes(key)) || 
+    "Unfortunately, we couldn't find the information you're looking for. Please contact us via email at acet@adypu.edu.in or call 020-35037942, +91-9881199224 for further assistance.";
 
   // Simulate a delay before showing the bot's response
   setTimeout(() => {
-    appendMessage(responses[response], "bot");
+    appendMessage(response, "bot");
   }, 500);
 
   // Clear the input field
