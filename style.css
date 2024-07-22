@@ -46,6 +46,9 @@ body {
   overflow-y: scroll;
   padding: 20px;
   border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -61,8 +64,10 @@ body {
 /* Input container styling */
 .input-container {
   display: flex;
-  padding: 20px;
+  padding: 10px;
   background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+  justify-content: flex-end; /* Align the input area to the right */
 }
 
 /* User input field styling */
