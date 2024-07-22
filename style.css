@@ -1,3 +1,4 @@
+/* Basic styling for the body */
 body {
   font-family: "Roboto", sans-serif;
   display: flex;
@@ -8,6 +9,7 @@ body {
   background-color: #ffffff;
 }
 
+/* Container for the chat interface */
 .chat-container {
   background-color: #ffffff;
   border-radius: 30px;
@@ -20,6 +22,7 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Header styling */
 .header {
   background-color: #007bff;
   color: #ffffff;
@@ -37,6 +40,7 @@ body {
   border-radius: 50%;
 }
 
+/* Styling for the chat messages area */
 .chat-box {
   height: 400px;
   overflow-y: scroll;
@@ -54,12 +58,14 @@ body {
   border-radius: 10px;
 }
 
+/* Input container styling */
 .input-container {
   display: flex;
   padding: 20px;
   background-color: #f9f9f9;
 }
 
+/* Styling for the user input field */
 #user-input {
   flex: 1;
   padding: 15px;
@@ -76,6 +82,7 @@ body {
   outline: none;
 }
 
+/* Styling for the send button */
 button {
   padding: 15px 20px;
   background-color: #007bff;
@@ -92,6 +99,7 @@ button:hover {
   transform: scale(1.05);
 }
 
+/* Styling for chat messages */
 .message {
   margin: 10px 0;
   padding: 10px 20px;
@@ -114,17 +122,39 @@ button:hover {
   border-radius: 20px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Typing animation styling */
+#typing-indicator {
+  display: none;
+  font-style: italic;
+  color: gray;
+  margin: 10px 0;
 }
 
+.dot1, .dot2, .dot3 {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: typing 1.5s infinite;
+}
+
+.dot2 {
+  animation-delay: 0.3s;
+}
+
+.dot3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes typing {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Responsive styling for smaller screens */
 @media (max-width: 600px) {
   .chat-box {
     height: 300px;
@@ -140,5 +170,17 @@ button:hover {
 
   button {
     width: 100%;
+  }
+}
+
+/* Fade in animation for messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
