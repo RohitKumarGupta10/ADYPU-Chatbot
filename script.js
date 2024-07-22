@@ -1,10 +1,3 @@
-// When the user presses the 'Enter' key, send the message
-document.getElementById("user-input").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    sendMessage();
-  }
-});
-
 function sendMessage() {
   // Get the user's input and remove any extra spaces
   const userInput = document.getElementById("user-input").value.trim();
@@ -28,9 +21,12 @@ function sendMessage() {
     "bye": "Goodbye and thank you for chatting with us!"
   };
 
-  // Find a response based on the user's input or default response if no match
-  const response = Object.keys(responses).find(key => userInput.toLowerCase().includes(key)) || 
-    "Unfortunately, we couldn't find the information you're looking for. Please contact us via email at acet@adypu.edu.in or call 020-35037942, +91-9881199224 for further assistance.";
+  // Convert user input to lowercase for case-insensitive matching
+  const userInputLower = userInput.toLowerCase();
+
+  // Find a response based on the user's input or use the default response if no match
+  const response = Object.keys(responses).find(key => userInputLower.includes(key)) || 
+    "Sorry, I don't understand that. Please contact us at acet@adypu.edu.in or call 020-35037942.";
 
   // Simulate a delay before showing the bot's response
   setTimeout(() => {
@@ -40,29 +36,3 @@ function sendMessage() {
   // Clear the input field
   document.getElementById("user-input").value = "";
 }
-
-function appendMessage(message, sender) {
-  // Get the chat box element
-  const chatBox = document.getElementById("chat-box");
-
-  // Create a new message element
-  const messageElement = document.createElement("div");
-  messageElement.textContent = message;
-  messageElement.classList.add("message", sender);
-
-  // Style the user's messages
-  if (sender === "user") messageElement.style.marginLeft = "auto";
-
-  // Add the new message to the chat box
-  chatBox.appendChild(messageElement);
-  
-  // Scroll to the bottom of the chat box
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-// Show an initial welcome message when the page loads
-window.onload = function () {
-  setTimeout(() => {
-    appendMessage("Welcome to our help desk. How can I assist you today?", "bot");
-  }, 500);
-};
