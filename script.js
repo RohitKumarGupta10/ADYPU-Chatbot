@@ -1,56 +1,73 @@
-// Set up an event listener to send a message when the 'Enter' key is pressed
+// When the user presses the 'Enter' key, send the message
 document.getElementById("user-input").addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     sendMessage();
   }
 });
 
-// Function to handle sending a message
 function sendMessage() {
   // Get the user's input and remove any extra spaces
   const userInput = document.getElementById("user-input").value.trim();
-  if (!userInput) return; // Do nothing if the input is empty
+  if (!userInput) return; // If there's no input, do nothing
 
-  // Show the user's message in the chat
+  // Add the user's message to the chat
   appendMessage(userInput, "user");
 
-  // Define possible responses
+  // Show typing animation
+  const typingIndicator = document.getElementById("typing-indicator");
+  typingIndicator.style.display = "block";
+
+  // Define responses to various keywords
   const responses = {
-    "admission": "Apply for admission online through our website www.adypu.edu.in.",
-    "contact": "Contact us at +91-8956487911. Visit our contact page for details.",
-    "courses": "We offer courses in Engineering, Management, Design, and more.",
-    "hostel": "Yes, we provide hostel facilities. Check our website for details.",
-    "fees": "Fee structure details are on our website.",
-    "hello": "Hello! How can I help you today?",
-    "hi": "Hello! How can I help you today?",
-    "hey": "Hello! How can I help you today?",
-    "placements": "Our placement cell assists with job placements.",
-    "thank you": "You're welcome! Have a great day!",
-    "bye": "Goodbye and thank you for chatting with us!"
+    "admission": "You can apply for admission online through our university website www.adypu.edu.in. Admission requirements and dates are available there.",
+    "contact": "You can contact us at +91-8956487911. Our address is D Y Patil Knowledge City, Charholi Bk. Via Lohegaon, Pune - 412105 Maharashtra (India). Visit our contact page for more information.",
+    "information": "You can contact us at +91-8956487911. Our address is D Y Patil Knowledge City, Charholi Bk. Via Lohegaon, Pune - 412105 Maharashtra (India). Visit our contact page for more information.",
+    "courses": "We offer a variety of courses in: School of Engineering, School of Management, School of Design, School of Liberal Arts, School of Law, School of Hotel Management.",
+    "hostel": "Yes, we provide hostel facilities for both boys and girls. For details on charges and availability, visit the hostel section on our website.",
+    "facilities": "Our campus has state-of-the-art facilities including libraries, laboratories, sports complexes, and more. Visit our facilities page for more details.",
+    "faculty": "Our faculty members are highly qualified with expertise in their respective fields. Visit our website for more details.",
+    "professors": "Our faculty members are highly qualified with expertise in their respective fields. Visit our website for more details.",
+    "fees": "Ajeenkya DY Patil University (ADYPU), Pune Fee Structure 2024 - B.Tech Rs 3,00,000, BBA Rs 2,30,000, B.Des Rs 3,50,000, BA Rs 2,30,000, BSc Rs 1,75,000 BCA Rs 2,00,000, M.Tech Rs 2,30,000, MBA Rs 3,50,000, MCA Rs 2,10,000.",
+    "university scholarship": "Yes, we offer various scholarships based on merit and financial need. For more information on how to apply and the criteria, visit our scholarships page.",
+    "hello": "Hello! How can I assist you today?",
+    "hi": "Hello! How can I assist you today?",
+    "hey": "Hello! How can I assist you today?",
+    "placements": "Our university has a dedicated placement cell that assists students with job placements. Many reputed companies visit our campus for recruitment. Visit our placement page for more details.",
+    "placement record": "At Ajeenkya DY Patil University, our placement records are impressive. The highest package was 21 lakhs per annum. The average package is 6 to 7 lakhs per annum. The lowest package was 4 lakhs per annum.",
+    "average package": "At Ajeenkya DY Patil University, our placement records are impressive. The highest package was 21 lakhs per annum. The average package is 6 to 7 lakhs per annum. The lowest package was 4 lakhs per annum.",
+    "it": "For IT support or Wi-Fi access, visit the IT department on campus or contact our helpdesk at +91-XXX-XXXXXXX.",
+    "wifi": "For IT support or Wi-Fi access, visit the IT department on campus or contact our helpdesk at +91-XXX-XXXXXXX.",
+    "health services": "Health services including counseling are available at our health center located on campus. Visit the health services page on our website for more information.",
+    "counseling": "Health services including counseling are available at our health center located on campus. Visit the health services page on our website for more information.",
+    "alumni": "Our alumni services offer career guidance and networking opportunities. Visit the alumni section on our website to explore services available post-graduation.",
+    "pg": "We offer both on-campus and off-campus housing options. Explore the housing section on our website for details on dormitories and off-campus accommodations.",
+    "research": "Research opportunities are available for undergraduate students, including involvement in faculty-led research projects. Explore the research section on our website for more details.",
+    "placement preparation": "Career services provide support for job preparation, including resume writing workshops and mock interviews. Visit the career services section on our website for more information.",
+    "job interviews": "Career services provide support for job preparation, including resume writing workshops and mock interviews. Visit the career services section on our website for more information.",
+    "thank you": "You're welcome! Goodbye and thank you for chatting with us. Have a great day!",
+    "bye": "You're welcome! Goodbye and thank you for chatting with us. Have a great day!"
   };
 
-  // Convert user input to lowercase
+  // Convert user input to lowercase for case-insensitive matching
   const userInputLower = userInput.toLowerCase();
 
-  // Find a matching response or use the default response
-  let response = "Sorry, I don't have an answer for that. Contact us at adypu.edu.in or call 020-35037942.";
-  for (const key in responses) {
-    if (userInputLower.includes(key)) {
-      response = responses[key];
-      break;
-    }
-  }
+  // Find a response based on the user's input or use the default response if no match
+  const response = Object.keys(responses).find(key => userInputLower.includes(key)) || 
+    "Unfortunately, I couldn’t find an answer to that. Please contact us at adypu.edu.in or call 020-35037942 for further assistance.";
 
-  // Add the bot's response to the chat with a slight delay
+  // Simulate a delay before showing the bot's response
   setTimeout(() => {
+    // Hide typing animation
+    typingIndicator.style.display = "none";
+
+    // Show the bot's response
     appendMessage(response, "bot");
-  }, 500); // 500 milliseconds delay
+  }, 1500); // 1500 milliseconds (1.5 seconds) delay
 
   // Clear the input field
   document.getElementById("user-input").value = "";
 }
 
-// Function to show a message in the chat
 function appendMessage(message, sender) {
   // Get the chat box element
   const chatBox = document.getElementById("chat-box");
@@ -60,19 +77,19 @@ function appendMessage(message, sender) {
   messageElement.textContent = message;
   messageElement.classList.add("message", sender);
 
-  // Style the user's message
+  // Style the user's messages
   if (sender === "user") messageElement.style.marginLeft = "auto";
 
-  // Add the message to the chat box
+  // Add the new message to the chat box
   chatBox.appendChild(messageElement);
   
   // Scroll to the bottom of the chat box
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Show a welcome message when the page loads
+// Show an initial welcome message when the page loads
 window.onload = function () {
   setTimeout(() => {
-    appendMessage("Welcome to our help desk. How can I assist you today?", "bot");
-  }, 500);
+    appendMessage("Welcome to Ajeenkya DY Patil University help desk. How can I assist you today?", "bot");
+  }, 1000); // 1000 milliseconds (1 second) delay
 };
