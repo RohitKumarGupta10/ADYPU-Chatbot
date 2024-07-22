@@ -70,9 +70,6 @@ function appendMessage(message, sender) {
   messageElement.textContent = message;
   messageElement.classList.add("message", sender);
 
-  // Style the user's messages
-  if (sender === "user") messageElement.style.marginLeft = "auto";
-
   // Add the new message to the chat box
   chatBox.appendChild(messageElement);
   
