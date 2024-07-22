@@ -1,54 +1,56 @@
-// When the user presses the 'Enter' key, send the message
+// Set up an event listener to send a message when the 'Enter' key is pressed
 document.getElementById("user-input").addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     sendMessage();
   }
 });
 
+// Function to handle sending a message
 function sendMessage() {
   // Get the user's input and remove any extra spaces
   const userInput = document.getElementById("user-input").value.trim();
-  if (!userInput) return; // If there's no input, do nothing
+  if (!userInput) return; // Do nothing if the input is empty
 
-  // Add the user's message to the chat
+  // Show the user's message in the chat
   appendMessage(userInput, "user");
 
-  // Define responses to various keywords
+  // Define possible responses
   const responses = {
-    "admission": "You can apply for admission online through our university website www.adypu.edu.in.",
-    "contact": "You can contact us at +91-8956487911. Visit our contact page for more details.",
+    "admission": "Apply for admission online through our website www.adypu.edu.in.",
+    "contact": "Contact us at +91-8956487911. Visit our contact page for details.",
     "courses": "We offer courses in Engineering, Management, Design, and more.",
     "hostel": "Yes, we provide hostel facilities. Check our website for details.",
-    "fees": "Fee structure details are available on our website.",
-    "hello": "Hello! How can I assist you today?",
-    "hi": "Hello! How can I assist you today?",
-    "hey": "Hello! How can I assist you today?",
-    "placements": "Our placement cell helps students with job placements.",
+    "fees": "Fee structure details are on our website.",
+    "hello": "Hello! How can I help you today?",
+    "hi": "Hello! How can I help you today?",
+    "hey": "Hello! How can I help you today?",
+    "placements": "Our placement cell assists with job placements.",
     "thank you": "You're welcome! Have a great day!",
     "bye": "Goodbye and thank you for chatting with us!"
   };
 
-  // Convert user input to lowercase for case-insensitive matching
+  // Convert user input to lowercase
   const userInputLower = userInput.toLowerCase();
 
-  // Find a response based on the user's input or use the default response if no match
-  let responseFound = false;
+  // Find a matching response or use the default response
+  let response = "Sorry, I don't have an answer for that. Contact us at adypu.edu.in or call 020-35037942.";
   for (const key in responses) {
     if (userInputLower.includes(key)) {
-      appendMessage(responses[key], "bot");
-      responseFound = true;
+      response = responses[key];
       break;
     }
   }
 
-  if (!responseFound) {
-    appendMessage("Unfortunately, I couldn’t find an answer to that. Please contact us at adypu.edu.in or call 020-35037942 for further assistance.", "bot");
-  }
+  // Add the bot's response to the chat with a slight delay
+  setTimeout(() => {
+    appendMessage(response, "bot");
+  }, 500); // 500 milliseconds delay
 
   // Clear the input field
   document.getElementById("user-input").value = "";
 }
 
+// Function to show a message in the chat
 function appendMessage(message, sender) {
   // Get the chat box element
   const chatBox = document.getElementById("chat-box");
@@ -58,17 +60,17 @@ function appendMessage(message, sender) {
   messageElement.textContent = message;
   messageElement.classList.add("message", sender);
 
-  // Style the user's messages
+  // Style the user's message
   if (sender === "user") messageElement.style.marginLeft = "auto";
 
-  // Add the new message to the chat box
+  // Add the message to the chat box
   chatBox.appendChild(messageElement);
   
   // Scroll to the bottom of the chat box
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Show an initial welcome message when the page loads
+// Show a welcome message when the page loads
 window.onload = function () {
   setTimeout(() => {
     appendMessage("Welcome to our help desk. How can I assist you today?", "bot");
