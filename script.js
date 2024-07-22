@@ -1,3 +1,10 @@
+// When the user presses the 'Enter' key, send the message
+document.getElementById("user-input").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
+
 function sendMessage() {
   // Get the user's input and remove any extra spaces
   const userInput = document.getElementById("user-input").value.trim();
@@ -36,3 +43,29 @@ function sendMessage() {
   // Clear the input field
   document.getElementById("user-input").value = "";
 }
+
+function appendMessage(message, sender) {
+  // Get the chat box element
+  const chatBox = document.getElementById("chat-box");
+
+  // Create a new message element
+  const messageElement = document.createElement("div");
+  messageElement.textContent = message;
+  messageElement.classList.add("message", sender);
+
+  // Style the user's messages
+  if (sender === "user") messageElement.style.marginLeft = "auto";
+
+  // Add the new message to the chat box
+  chatBox.appendChild(messageElement);
+  
+  // Scroll to the bottom of the chat box
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// Show an initial welcome message when the page loads
+window.onload = function () {
+  setTimeout(() => {
+    appendMessage("Welcome to our help desk. How can I assist you today?", "bot");
+  }, 500);
+};
