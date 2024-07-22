@@ -47,13 +47,14 @@ function sendMessage() {
       "placement preparation": "Career services provide support for job preparation, including resume writing workshops and mock interviews. Visit the career services section on our website for more information.",
       "job interviews": "Career services provide support for job preparation, including resume writing workshops and mock interviews. Visit the career services section on our website for more information.",
       "thank you": "You're welcome! Goodbye and thank you for chatting with us. Have a great day!",
-      "bye": "You're welcome! Goodbye and thank you for chatting with us. Have a great day!"
+      "bye": "Goodbye and thank you for chatting with us!"
     };
 
     // Convert user input to lowercase for case-insensitive matching
     const userInputLower = userInput.toLowerCase();
-    // Find a response or use a default response if no match is found
-    const response = Object.keys(responses).find(key => userInputLower.includes(key)) || 
+    // Find a response based on the user's input or use a default response if no match
+    const matchedKey = Object.keys(responses).find(key => userInputLower.includes(key));
+    const response = matchedKey ? responses[matchedKey] :
       "Unfortunately, I couldn’t find an answer to that. Please contact us at adypu.edu.in or call 020-35037942 for further assistance.";
 
     // Display the bot's response in the chat
