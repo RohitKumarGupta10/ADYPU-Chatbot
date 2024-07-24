@@ -11,10 +11,10 @@ Check out the live demo [here](https://adypu-chatbot.netlify.app/).
 ### Screenshots
 
 #### Chatbot Interface
-![Chatbot Interface](Chatbot Interface.png) 
+![Chatbot Interface](ChatbotInterface.png) 
 
 #### Chatbot Response
-![Chatbot Response](Chatbot Response.png) 
+![Chatbot Response](ChatbotResponse.png) 
 
 ## Features
 
