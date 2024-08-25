@@ -98,11 +98,6 @@ button {
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
 /* Message styling */
 .message {
   margin: 10px 0;
